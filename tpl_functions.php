@@ -10,9 +10,9 @@ if(!defined('DOKU_INC')) die();
 if(!defined('DOKU_LF')) define('DOKU_LF', "\n");
 
 // load language files
-tpl_include('lang/en/lang.php');
-if(@file_exists('lang/'.$conf['lang'].'/lang.php')) {
-    tpl_include('lang/'.$conf['lang'].'/lang.php');
+require_once(DOKU_TPLINC.'lang/en/lang.php');
+if(@file_exists(DOKU_TPLINC.'lang/'.$conf['lang'].'/lang.php')) {
+    require_once(DOKU_TPLINC.'lang/'.$conf['lang'].'/lang.php');
 }
 
 function html_list_index_navigation($item){
@@ -46,17 +46,17 @@ function tpl_logo() {
         case(tpl_getConf('logo')):
             $logo = tpl_getconf('logo');
             break;
-        case(@file_exists('images/logo.jpg')):
-            $logo = '/lib/tpl/dokubook/logo.jpg';
+        case(@file_exists(DOKU_TPLINC.'images/logo.jpg')):
+            $logo = DOKU_TPL.'images/logo.jpg';
             break;
-        case(@file_exists('images/logo.jpeg')):
-            $logo = '/lib/tpl/dokubook/logo.jpeg';
+        case(@file_exists(DOKU_TPLINC.'images/logo.jpeg')):
+            $logo = DOKU_TPL.'images/logo.jpeg';
             break;
-        case(@file_exists('images/logo.png')):
-            $logo = '/lib/tpl/dokubook/logo.png';
+        case(@file_exists(DOKU_TPLINC.'images/logo.png')):
+            $logo = DOKU_TPL.'images/logo.png';
             break;
         default:
-            $logo = '/lib/tpl/dokubook/dokuwiki-128.png';
+            $logo = DOKU_TPL.'images/dokuwiki-128.png';
             break;
     }
 
@@ -126,7 +126,6 @@ function tpl_sidebar() {
     tpl_actionlink('index');
     tpl_actionlink('recent');
     tpl_actionlink('backlink');
-    tpl_actionlink('media');
     tpl_actionlink('profile');
     tpl_actionlink('login');
     print '</div>' . DOKU_LF;
@@ -214,7 +213,8 @@ function p_index_xhtml($ns) {
   search($data,$conf['datadir'],'search_index',array('ns' => $ns));
 
   print '<div id="sb__index__tree">' . DOKU_LF;
-  print html_buildlist($data,'idx','html_list_index_navigation','html_li_index');
+  print html_buildlist($data,'idx','html_list_index','html_li_index');
   print '</div>' . DOKU_LF;
 }
+
 // vim:ts=2:sw=2:enc=utf-8:
