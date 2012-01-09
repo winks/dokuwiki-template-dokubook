@@ -300,7 +300,7 @@ div.dokuwiki div#toolbox a.profile {
   padding: 1px 0px 1px 18px;
 }
 div.dokuwiki div#toolbox a.media {
-  background: transparent url(/lib/images/mediamanager.png) 0px 1px no-repeat;
+  background: transparent url(../../images/mediamanager.png) 0px 1px no-repeat;
   padding: 1px 0px 1px 18px;
 }
 
