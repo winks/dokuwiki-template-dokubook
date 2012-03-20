@@ -4,7 +4,7 @@
 # @author Samuel Fischer <sf@notomorrow.de>
 
 DIST_VERSION=`cat VERSION`
-DIST_NAME=template-dokubook-$(DIST_VERSION)
+DIST_NAME=dokubook-$(DIST_VERSION)
 DIST_DIR=.
 APP_NAME=dokubook
 DOKU_DIR=$(DIST_DIR)
