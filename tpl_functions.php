@@ -37,7 +37,7 @@ function html_list_index_navigation($item){
  *
  * @author Michael Klier <chi@chimeric.de>
  */
-function tpl_logo() {
+function dokubook_tpl_logo() {
     global $conf;
     
     $out = '';
@@ -74,7 +74,7 @@ function tpl_logo() {
  *
  * @author Michael Klier <chi@chimeric.de>
  */
-function tpl_sidebar() {
+function dokubook_tpl_sidebar() {
     global $lang;
     global $ID;
     global $INFO;
@@ -140,7 +140,7 @@ function tpl_sidebar() {
  *
  * @author Michael Klier <chi@chimeric.de>
  */
-function tpl_footer() {
+function dokubook_tpl_footer() {
     global $ID;
 
     $svID  = $ID;

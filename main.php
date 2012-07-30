@@ -70,8 +70,8 @@ global $ACT;
   <?php html_msgarea()?>
 
   <div id="sidebar_<?php echo tpl_getConf('sb_position')?>" class="sidebar">
-    <?php tpl_logo()?> 
-    <?php tpl_sidebar()?>
+    <?php dokubook_tpl_logo()?> 
+    <?php dokubook_tpl_sidebar()?>
   </div>
 
   <div id="dokubook_container_<?php echo tpl_getConf('sb_position')?>">
@@ -154,7 +154,7 @@ global $ACT;
 
     <div class="clearer"></div>
 
-    <?php tpl_footer() ?>
+    <?php dokubook_tpl_footer() ?>
 
     <div class="stylefoot">
       <?php /*old includehook*/ @include(dirname(__FILE__).'/pagefooter.html')?>
