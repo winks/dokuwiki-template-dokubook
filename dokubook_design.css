@@ -6,7 +6,7 @@
  */
 
 body {
-  background: __white__ url(/lib/tpl/dokubook/images/dwbg.jpg) repeat-x top left;
+  background: __white__ url(images/dwbg.jpg) repeat-x top left;
 }
 
 div.dokuwiki a.urlextern:visited,
