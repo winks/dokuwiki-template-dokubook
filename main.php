@@ -94,7 +94,7 @@ global $ACT;
                     print '<li>' . $npb . '</li>' . DOKU_LF;
                 }
             }
-            foreach(array('revert', 'edit', 'history', 'subscription') as $act) {
+            foreach(array('revert', 'edit', 'history', 'subscribe') as $act) {
                 ob_start();
                 print '<li>';
                 if($act == 'revert' && !empty($REV)) {
