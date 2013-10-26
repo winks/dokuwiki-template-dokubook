@@ -33,9 +33,9 @@ global $ACT;
 
   <?php tpl_metaheaders()?>
 
-  <link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
+  <?php echo tpl_favicon() ?>
 
-  <?php /*old includehook*/ @include(dirname(__FILE__).'/meta.html')?>
+  <?php tpl_includeFile('meta.html')?>
 
   <!-- change link borders dynamically -->
   <style type="text/css">
@@ -65,7 +65,7 @@ global $ACT;
 </head>
 
 <body class="<?php echo $ACT ?>">
-<?php /*old includehook*/ @include(dirname(__FILE__).'/topheader.html')?>
+<?php tpl_includeFile('topheader.html')?>
 <div class="dokuwiki">
   <?php html_msgarea()?>
 
@@ -79,8 +79,8 @@ global $ACT;
     <div class="stylehead">
 
       <div class="header">
-        <?php /*old includehook*/ @include(dirname(__FILE__).'/pageheader.html')?>
-        <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>
+        <?php tpl_includeFile('pageheader.html')?>
+        <?php tpl_includeFile('header.html')?>
         <div class="logo">
           <?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" accesskey="h" title="[ALT+H]"')?>
         </div>
@@ -157,10 +157,10 @@ global $ACT;
     <?php dokubook_tpl_footer() ?>
 
     <div class="stylefoot">
-      <?php /*old includehook*/ @include(dirname(__FILE__).'/pagefooter.html')?>
+      <?php tpl_includeFile('pagefooter.html')?>
     </div>
 
-    <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
+    <?php tpl_includeFile('footer.html')?>
 
   </div>
 
