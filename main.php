@@ -33,7 +33,7 @@ global $ACT;
 
   <?php tpl_metaheaders()?>
 
-  <?php echo tpl_favicon() ?>
+  <?php echo tpl_favicon()?>
 
   <?php tpl_includeFile('meta.html')?>
 
