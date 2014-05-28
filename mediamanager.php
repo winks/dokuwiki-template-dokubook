@@ -22,7 +22,7 @@ if (!defined('DOKU_INC')) die();
     [<?php echo strip_tags($conf['title'])?>]
   </title>
   <?php tpl_metaheaders()?>
-  <?php echo tpl_favicon() ?>
+  <?php echo tpl_favicon()?>
 </head>
 
 <body>
