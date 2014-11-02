@@ -201,7 +201,7 @@ div.dokuwiki div.sidebar h5 {
 }
 
 /* -------------- document ---------------------- */
-div.dokuwiki div.page {
+div.dokuwiki main.page {
   line-height: 160%;
   margin: 0;
   border: 1px solid __border__;
@@ -262,50 +262,50 @@ div.dokuwiki div.footerinc {
 }
 
 /* ---------- toolbox ----------- */
-div.dokuwiki div.sidebar div#toolbox {
+div.dokuwiki div.sidebar #toolbox {
   padding-bottom: 0.3em;
 }
 
-div.dokuwiki div#toolbox ul {
+div.dokuwiki #toolbox ul {
   list-style: none;
   margin: 0;
 }
 
-div.dokuwiki div#toolbox a.login {
+div.dokuwiki #toolbox a.login {
   background: transparent url(images/tool-login.png) 0px 1px no-repeat;
   padding: 1px 0px 1px 18px;
 }
 
-div.dokuwiki div#toolbox a.logout {
+div.dokuwiki #toolbox a.logout {
   background: transparent url(images/tool-logout.png) 0px 1px no-repeat;
   padding: 1px 0px 1px 18px;
 }
 
-div.dokuwiki div#toolbox a.index {
+div.dokuwiki #toolbox a.index {
   background: transparent url(images/tool-index.png) 1px 1px no-repeat;
   padding: 1px 0px 1px 18px;
 }
 
-div.dokuwiki div#toolbox a.recent {
+div.dokuwiki #toolbox a.recent {
   background: transparent url(images/tool-recent.png) 0px 1px no-repeat;
   padding: 1px 0px 1px 18px;
 }
 
-div.dokuwiki div#toolbox a.admin {
+div.dokuwiki #toolbox a.admin {
   background: transparent url(images/tool-admin.png) 0px 1px no-repeat;
   padding: 1px 0px 1px 18px;
 }
 
-div.dokuwiki div#toolbox a.backlink {
+div.dokuwiki #toolbox a.backlink {
   background: transparent url(images/tool-backlink.png) 0px 1px no-repeat;
   padding: 1px 0px 1px 18px;
 }
 
-div.dokuwiki div#toolbox a.profile {
+div.dokuwiki #toolbox a.profile {
   background: transparent url(images/tool-profile.png) 0px 1px no-repeat;
   padding: 1px 0px 1px 18px;
 }
-div.dokuwiki div#toolbox a.media {
+div.dokuwiki #toolbox a.media {
   background: transparent url(../../images/mediamanager.png) 0px 1px no-repeat;
   padding: 1px 0px 1px 18px;
 }
