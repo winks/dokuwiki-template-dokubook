@@ -20,12 +20,10 @@ global $REV;
 global $ACT;
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang']?>"
- lang="<?php echo $conf['lang']?>" dir="<?php echo $lang['direction']?>">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html lang="<?php echo $conf['lang']?>" id="document" dir="<?php echo $lang['direction']?>">
+<head<?php if (tpl_getConf('opengraphheading')) { ?> prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# fb: http://ogp.me/ns/fb# place: http://ogp.me/ns/place# book: http://ogp.me/ns/book#"<?php } ?>>
+  <meta charset="utf-8" />
   <title>
     <?php tpl_pagetitle()?>
     [<?php echo strip_tags($conf['title'])?>]
@@ -63,7 +61,6 @@ global $ACT;
     }
   </style>
 </head>
-
 <body class="<?php echo $ACT ?>">
 <?php tpl_includeFile('topheader.html')?>
 <div class="dokuwiki">
@@ -76,19 +73,18 @@ global $ACT;
 
   <div id="dokubook_container_<?php echo tpl_getConf('sb_position')?>">
 
-    <div class="stylehead">
-
+    <header class="stylehead">
       <div class="header">
         <?php tpl_includeFile('pageheader.html')?>
         <?php tpl_includeFile('header.html')?>
         <div class="logo">
-          <?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" accesskey="h" title="[ALT+H]"')?>
+          <?php tpl_link(wl(),$conf['title'],'id="dokuwiki__top" accesskey="h" title="[ALT+H]"')?>
         </div>
       </div>
 
       <ul id="top__nav">
         <?php
-			if(!plugin_isdisabled('npd') && ($npd =& plugin_load('helper', 'npd'))) {
+	    if(!plugin_isdisabled('npd') && ($npd =& plugin_load('helper', 'npd'))) {
                 $npb = $npd->html_new_page_button(true);
                 if($npb) {
                     print '<li>' . $npb . '</li>' . DOKU_LF;
@@ -116,11 +112,11 @@ global $ACT;
         ?>
       </ul>
 
-    </div>
+    </header>
 
     <?php flush()?>
 
-    <div class="page">
+    <main class="page">
 
       <?php if($conf['breadcrumbs']){?>
       <div class="breadcrumbs">
@@ -148,7 +144,7 @@ global $ACT;
 
       <div class="clearer"></div>
 
-    </div>
+    </main>
 
     <?php flush()?>
 
@@ -156,9 +152,9 @@ global $ACT;
 
     <?php dokubook_tpl_footer() ?>
 
-    <div class="stylefoot">
+    <footer class="stylefoot">
       <?php tpl_includeFile('pagefooter.html')?>
-    </div>
+    </footer>
 
     <?php tpl_includeFile('footer.html')?>
 

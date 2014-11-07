@@ -11,3 +11,5 @@ $conf['sb_position'] = 'left';
 $conf['ft_pagename'] = 'footer';        // the pagename for the footer page
 $conf['closedwiki']  = false;           // set to true if you run a closed wiki 
 $conf['logo']        = false;           // path to an image used as logo
+$conf['opengraphheading'] = 1;          // add opengraph namespace prefixes to head section
+ 

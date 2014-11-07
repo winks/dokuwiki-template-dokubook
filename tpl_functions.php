@@ -60,7 +60,7 @@ function dokubook_tpl_logo() {
             break;
     }
 
-    $out .= '<a href="' . DOKU_BASE . '" name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]">';
+    $out .= '<a href="' . DOKU_BASE . '">';
 		if( $logo ) {
 				$out .= '  <img class="logo" src="' . $logo . '" alt="' . $conf['title'] . '" />' . DOKU_LF;
 		}
@@ -87,15 +87,15 @@ function dokubook_tpl_sidebar() {
 
     if(tpl_getConf('closedwiki') && empty($INFO['userinfo'])) {
         print '<span class="sb_label">' . $lang['toolbox'] . '</span>' . DOKU_LF;
-        print '<div id="toolbox" class="sidebar_box">' . DOKU_LF;
+        print '<aside id="toolbox" class="sidebar_box">' . DOKU_LF;
         tpl_actionlink('login');
-        print '</div>' . DOKU_LF;
+        print '</aside>' . DOKU_LF;
         return;
     }
 
     // main navigation
     print '<span class="sb_label">' . $lang['navigation'] . '</span>' . DOKU_LF;
-    print '<div id="navigation" class="sidebar_box">' . DOKU_LF;
+    print '<aside id="navigation" class="sidebar_box">' . DOKU_LF;
 
     while(!$found && count($path) > 0) {
         $sb = implode(':', $path) . ':' . $navpn;
@@ -111,7 +111,7 @@ function dokubook_tpl_sidebar() {
         print p_index_xhtml(cleanID($svID));
     }
 
-    print '</div>' . DOKU_LF;
+    print '</aside>' . DOKU_LF;
 
     // generate the searchbox
     print '<span class="sb_label">' . strtolower($lang['btn_search']) . '</span>' . DOKU_LF;
@@ -121,7 +121,7 @@ function dokubook_tpl_sidebar() {
 
     // generate the toolbox
     print '<span class="sb_label">' . $lang['toolbox'] . '</span>' . DOKU_LF;
-    print '<div id="toolbox" class="sidebar_box">' . DOKU_LF;
+    print '<aside id="toolbox" class="sidebar_box">' . DOKU_LF;
     tpl_actionlink('admin');
     tpl_actionlink('index');
     tpl_actionlink('media');
@@ -129,7 +129,7 @@ function dokubook_tpl_sidebar() {
     tpl_actionlink('backlink');
     tpl_actionlink('profile');
     tpl_actionlink('login');
-    print '</div>' . DOKU_LF;
+    print '</aside>' . DOKU_LF;
 
     // restore ID just in case
     $ID = $svID;
