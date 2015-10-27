@@ -224,7 +224,8 @@ div.dokuwiki pre.file {
 }
 
 /* -------------- search -------------------------- */
-div.dokuwiki form#dw__search input.button {
+div.dokuwiki form#dw__search input.button,
+div.dokuwiki form#dw__search button {
   display: none;
 }
 
@@ -252,7 +253,8 @@ div.dokuwiki div#footer {
   text-align: center;
 }
 
-div.dokuwiki div#footer input.button {
+div.dokuwiki div#footer input.button,
+div.dokuwiki div#footer button {
   float: none;
 }
 
