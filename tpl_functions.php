@@ -39,12 +39,16 @@ function html_list_index_navigation($item){
  */
 function dokubook_tpl_logo() {
     global $conf;
-    
+
     $out = '';
 
     switch(true) {
         case(tpl_getConf('logo')):
-            $logo = tpl_getconf('logo');
+            $logo = tpl_getConf('logo');
+            // check if configured logo is a media file
+            if(file_exists(mediaFN($logo))) {
+                $logo = ml($logo, array('w' => 128));
+            }
             break;
         case(@file_exists(DOKU_TPLINC.'images/logo.jpg')):
             $logo = DOKU_TPL.'images/logo.jpg';
