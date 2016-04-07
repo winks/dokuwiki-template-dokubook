@@ -50,17 +50,17 @@ function dokubook_tpl_logo() {
                 $logo = ml($logo, array('w' => 128));
             }
             break;
-        case(@file_exists(DOKU_TPLINC.'images/logo.jpg')):
-            $logo = DOKU_TPL.'images/logo.jpg';
+        case(@file_exists(tpl_incdir().'images/logo.jpg')):
+            $logo = tpl_basedir().'images/logo.jpg';
             break;
-        case(@file_exists(DOKU_TPLINC.'images/logo.jpeg')):
-            $logo = DOKU_TPL.'images/logo.jpeg';
+        case(@file_exists(tpl_incdir().'images/logo.jpeg')):
+            $logo = tpl_basedir().'images/logo.jpeg';
             break;
-        case(@file_exists(DOKU_TPLINC.'images/logo.png')):
-            $logo = DOKU_TPL.'images/logo.png';
+        case(@file_exists(tpl_incdir().'images/logo.png')):
+            $logo = tpl_basedir().'images/logo.png';
             break;
         default:
-            $logo = DOKU_TPL.'images/dokuwiki-128.png';
+            $logo = tpl_basedir().'images/dokuwiki-128.png';
             break;
     }
 
