@@ -4,4 +4,4 @@
  */
 
 $lang['toolbox']    = 'herramientas';
-$lang['navigation'] = 'menú';
+$lang['navigation'] = 'navegación';
