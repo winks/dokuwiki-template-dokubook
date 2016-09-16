@@ -68,7 +68,12 @@ global $ACT;
   <?php html_msgarea()?>
 
   <div id="sidebar_<?php echo tpl_getConf('sb_position')?>" class="sidebar">
-    <?php dokubook_tpl_logo()?> 
+    <?php dokubook_tpl_logo()?>
+    <?php
+        /** @var helper_plugin_translation $translation */
+        $translation = plugin_load('helper','translation');
+        if ($translation) echo $translation->showTranslations();
+    ?>
     <?php dokubook_tpl_sidebar()?>
   </div>
 
