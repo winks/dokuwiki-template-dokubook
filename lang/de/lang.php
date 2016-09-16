@@ -3,5 +3,5 @@
  * German Language file for DokuBook template
  */
 
-$lang['toolbox']    = 'toolbox';
+$lang['toolbox']    = 'werkzeuge';
 $lang['navigation'] = 'navigation';
