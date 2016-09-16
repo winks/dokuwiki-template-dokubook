@@ -9,7 +9,7 @@
 $conf['sb_pagename'] = 'navigation';    // the pagename for the navigation pages
 $conf['sb_position'] = 'left';
 $conf['ft_pagename'] = 'footer';        // the pagename for the footer page
-$conf['closedwiki']  = false;           // set to true if you run a closed wiki 
-$conf['logo']        = false;           // path to an image used as logo
+$conf['closedwiki']  = 0;               // set to true if you run a closed wiki
+$conf['logo']        = '';              // path to an image used as logo
 $conf['opengraphheading'] = 1;          // add opengraph namespace prefixes to head section
- 
+
