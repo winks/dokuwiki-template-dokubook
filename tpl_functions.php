@@ -74,6 +74,25 @@ function dokubook_tpl_logo() {
 }
 
 /**
+ * rebuild the old menu items as done by tpl_actionlink via menus
+ */
+function dokubook_old_menu($items, $filter = []) {
+    $printed = false;
+    foreach ($items as $item) {
+        if (!empty($filter) && !in_array($item->getType(), $filter)) continue;
+        printf(
+            '<a class="action %s" href="%s" rel="nofollow" title="%s">%s</a>',
+            strtolower($item->getType()),
+            $item->getLink(),
+            $item->getTitle(),
+            $item->getLabel()
+        );
+        $printed = true;
+    }
+    return $printed;
+}
+
+/**
  * generates the sidebar contents
  *
  * @author Michael Klier <chi@chimeric.de>
@@ -98,6 +117,7 @@ function dokubook_tpl_sidebar() {
     }
 
     // main navigation
+    if (empty($lang['navigation'])) $lang['navigation'] = '';
     print '<span class="sb_label">' . $lang['navigation'] . '</span>' . DOKU_LF;
     print '<aside id="navigation" class="sidebar_box">' . DOKU_LF;
 
@@ -124,15 +144,15 @@ function dokubook_tpl_sidebar() {
     print '</div>' . DOKU_LF;
 
     // generate the toolbox
+    if (empty($lang['toolbox'])) $lang['toolbox'] = '';
     print '<span class="sb_label">' . $lang['toolbox'] . '</span>' . DOKU_LF;
     print '<aside id="toolbox" class="sidebar_box">' . DOKU_LF;
-    tpl_actionlink('admin');
-    tpl_actionlink('index');
-    tpl_actionlink('media');
-    tpl_actionlink('recent');
-    tpl_actionlink('backlink');
-    tpl_actionlink('profile');
-    tpl_actionlink('login');
+    $items = (new \dokuwiki\Menu\PageMenu())->getItems();
+    dokubook_old_menu($items, ['Backlink']);
+    $items = (new \dokuwiki\Menu\SiteMenu())->getItems();
+    dokubook_old_menu($items);
+    $items = (new \dokuwiki\Menu\UserMenu())->getItems();
+    dokubook_old_menu($items);
     print '</aside>' . DOKU_LF;
 
     // restore ID just in case

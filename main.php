@@ -96,18 +96,19 @@ global $ACT;
                     print '<li>' . $npb . '</li>' . DOKU_LF;
                 }
             }
-            foreach(array('revert', 'edit', 'history', 'subscribe') as $act) {
+            $items = (new \dokuwiki\Menu\PageMenu())->getItems();
+            foreach(array('revert', 'edit', 'revs', 'subscribe') as $act) {
                 ob_start();
                 print '<li>';
                 if($act == 'revert' && !empty($REV)) {
-                    if(tpl_actionlink($act)) {
+                    if(dokubook_old_menu($items, [$act])) {
                         print '</li>' . DOKU_LF;
                         ob_end_flush();
                     } else {
                         ob_end_clean();
                     }
                 } else {
-                    if(tpl_actionlink($act)) {
+                    if(dokubook_old_menu($items, [$act])) {
                         print '</li>' . DOKU_LF;
                         ob_end_flush();
                     } else {
@@ -146,7 +147,10 @@ global $ACT;
         </div>
       </div>
 
-      <?php tpl_actionlink('top')?>
+      <?php
+$items = (new \dokuwiki\Menu\PageMenu())->getItems();
+dokubook_old_menu($items, ['top']);
+?>
 
       <div class="clearer"></div>
 
